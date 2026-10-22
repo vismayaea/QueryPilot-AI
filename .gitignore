@@ -1,0 +1,51 @@
+# Environment variables
+.env
+.streamlit/secrets.toml
+
+# Database
+chinook.db
+Chinook.db
+data/
+*.db
+*.db-journal
+
+
+# Virtual environment
+.venv/
+venv/
+env/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+# Frontend dependencies & build artifacts
+node_modules/
+frontend/node_modules/
+dist/
+frontend/dist/
+dist-ssr/
+frontend/dist-ssr/
+*.local
+
+# Tests, caches & scratch
+.pytest_cache/
+scratch/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*

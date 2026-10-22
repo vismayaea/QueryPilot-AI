@@ -1,0 +1,126 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+
+  html, body {
+    background-color: #F7F7F2 !important;
+    color: #17251D !important;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  /* Refined, quiet scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #F7F7F2;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #D8DFD5;
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #BAC4B7;
+  }
+}
+
+/* Editorial rule line */
+.editorial-ruling {
+  background-image: linear-gradient(to right, #E0E5DD 0%, #CAD4C8 50%, #E0E5DD 100%);
+  height: 1px;
+}
+
+/* Warm white card surface */
+.editorial-card {
+  background: #FFFFFF;
+  border: 1px solid #E0E5DD;
+  box-shadow: 0 1px 3px rgba(18, 61, 44, 0.04);
+}
+
+.editorial-card-hover {
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.editorial-card-hover:hover {
+  border-color: #123D2C;
+  box-shadow: 0 4px 16px -2px rgba(18, 61, 44, 0.10);
+}
+
+/* High-contrast Forest SQL Syntax Highlighting */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #17251D;
+  font-family: 'JetBrains Mono', monospace;
+  direction: ltr;
+  text-align: left;
+  white-space: pre-wrap;
+  word-spacing: normal;
+  word-break: normal;
+  line-height: 1.65;
+  tab-size: 2;
+  hyphens: none;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: #6C776E;
+  font-style: italic;
+}
+
+.token.punctuation {
+  color: #556257;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol {
+  color: #9A3412; /* warm rust */
+  font-weight: 500;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin {
+  color: #285B43; /* secondary green */
+}
+
+.token.operator,
+.token.entity,
+.token.url {
+  color: #4D6B53;
+}
+
+.token.keyword {
+  color: #123D2C; /* primary dark green */
+  font-weight: 700;
+}
+
+.token.function,
+.token.class-name {
+  color: #0B2E22; /* deep forest green */
+  font-weight: 600;
+}
+
+/* Reduced motion preference support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
