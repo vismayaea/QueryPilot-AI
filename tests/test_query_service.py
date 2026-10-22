@@ -420,7 +420,7 @@ def test_sanitize_error_details_scrubs_keys():
         assert 'AIzaSy' not in clean_1
         assert '[REDACTED_API_KEY]' in clean_1
 
-    raw_error_2 = "Error: https://generativelanguage.googleapis.com/v1/models?key=AQ.Ab8FakeTestDummyKeyNotReal1234567890 failed"
+    raw_error_2 = "Error: https://generativelanguage.googleapis.com/v1/models?key=AQ.DummyMockKeyForTesting1234567890 failed"
     clean_2 = sanitize_error_details(raw_error_2)
     assert "FakeTestDummy" not in clean_2
     assert "key=[REDACTED]" in clean_2

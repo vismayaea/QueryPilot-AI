@@ -1,32 +1,59 @@
-# React + TypeScript + Vite
+# QueryPilot AI — Frontend Client
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+The web interface for QueryPilot AI, built with **React 19**, **Vite 8**, **TypeScript**, and **Tailwind CSS**.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Features
 
-## React Compiler
+- **Centered Question-First Experience:** Refined QueryPilot AI header, natural-language composer with focus transitions, and dynamic suggested inquiry pills.
+- **Forest-Green Design System:** Bespoke high-contrast palette featuring deep forest green (`#123D2C` / `#0B2E22`), pale sage (`#E6EDE5`), and warm off-white background (`#F7F7F2`).
+- **Data Visualization & Result Tables:** Tabular result viewing with automatic Recharts bar and line visualization tailored to returned SQL data.
+- **Non-Intrusive Secondary Drawers:**
+  - **Dataset Selection Modal:** Browse and switch between isolated SQLite datasets.
+  - **Schema Drawer:** Inspect column headers, inferred SQLite types, and sample data values.
+  - **Inquiry Chronicle Drawer:** Review session query history, execution timestamps, and yielded row counts.
+  - **CSV Upload Modal:** Drag-and-drop tabular CSV file ingestion with client-side header and file validation.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the Oxlint configuration
+## Development
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+### Prerequisites
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+- Node.js 18+
+- npm
+
+### Installation
+
+```bash
+npm install
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+### Run Locally
+
+```bash
+npm run dev
+```
+
+The application runs at `http://localhost:3000`. In development, Vite automatically proxies `/api` requests to `http://127.0.0.1:8000`.
+
+### Production Build
+
+```bash
+npm run build
+```
+
+Compiles TypeScript and outputs production assets to `dist/`.
+
+---
+
+## Configuration
+
+In production, if the frontend is hosted on a separate domain from the FastAPI backend, set the backend API base URL:
+
+```bash
+VITE_API_BASE_URL=https://your-backend-api-domain.com
+```
+
+If left blank or omitted, requests use relative paths (`/api/...`), ideal for reverse-proxy or unified domain deployments.
